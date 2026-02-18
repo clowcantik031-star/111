@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rani's</title>
+  <style>
+    body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.box {
+    background: maroon;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    background: linear-gradient(to right, #14e30, #243b55)
+    height: 100vh;
+    width: 100%;
+}
+
+.text {
+    color: black;
+    mix-blend-mode: difference;
+    background: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+   section {
+    margin-top: 60px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+#about {
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+#about.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+  </style>
+</head>
+<script>
+window.addEventListener("scroll", function() {
+    const about = document.getElementById("about");
+    const position = about.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if(position < screenPosition) {
+        about.classList.add("show");
+    }
+});
+</script>
+
+<body>
+  <div class="box">
+      <h1 id="judul">Haloo, welcome!</h1>
+<button onclick="ubahTampilan()">Click Me</button>
+
+<script>
+function ubahTampilan() {
+    document.body.style.background = "black";
+    document.body.style.color = "pink";
+}
+</script>
+
+<script>
+function ubahTeks() {
+    document.getElementById("judul").innerHTML = "Kamu pencet aku, ih keren!";}
+</script>
+  </div>
+  <section>
+  <h1>About me:</h1>
+  <p>Orangnya sibuk, jgn di ganggu kec mabar efef.</p>
+  </section>
+  <section>
+    <h2>My favorite hobi:</h2>
+    <p>Main game dan nonton</p>
+  </section>
+  <section>
+    <h3>My favorite food</h3>
+    <p>Selagi masih belum basi mah, gass</p>
+  </section>
+  <section>
+    <h4>My favorite color</h4>
+    <p>Rose gold</p>
+  </section>
+</body>
+</html> 
